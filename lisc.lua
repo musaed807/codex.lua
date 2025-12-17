@@ -1,4 +1,4 @@
---// CODEX ALL-IN-ONE LICENSE SYSTEM (FIXED)
+--// CODEX ALL-IN-ONE LICENSE SYSTEM (FULL)
 
 local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
@@ -7,26 +7,25 @@ local RbxAnalyticsService = game:GetService("RbxAnalyticsService")
 local player = Players.LocalPlayer
 local FILE = "codex_license.json"
 
--- 🔑 مفاتيح Codex
+-- 🔑 مفاتيح Codex (عدّلها)
 local KEYS = {
     ["CODEX-A9Q2-ZX8M-7KLP"] = true,
     ["CODEX-AAAA-BBBB-CCCC"] = true
 }
 
--- 🧠 HWID
+-- 🧠 HWID (أفضل المتاح في Roblox)
 local function HWID()
     return RbxAnalyticsService:GetClientId()
 end
 
--- 🚀 سكربتك الأساسي (حطه هنا)
+-- 🚀 سكربتك الأساسي (يتشغّل بعد التفعيل)
 local function RunScript()
-    print("🔥 CODEX VERIFIED | SCRIPT RUNNING")
-
-    -- مثال:
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/musaed807/codex.lua/refs/heads/main/codexb.lua"))()
+    loadstring(game:HttpGet(
+        "https://raw.githubusercontent.com/musaed807/codex.lua/refs/heads/main/codexb.lua"
+    ))()
 end
 
--- 💾 حفظ
+-- 💾 حفظ الليسن
 local function save(key)
     if writefile then
         writefile(FILE, HttpService:JSONEncode({
@@ -37,7 +36,7 @@ local function save(key)
     end
 end
 
--- 📂 تحميل
+-- 📂 تحميل الليسن
 local function load()
     if readfile and isfile and isfile(FILE) then
         return HttpService:JSONDecode(readfile(FILE))
@@ -47,12 +46,13 @@ end
 -- ✅ تحقق
 local function verify(data)
     return data
+        and data.k
         and KEYS[data.k]
         and data.u == player.UserId
         and data.h == HWID()
 end
 
--- ⚡ تحقق تلقائي
+-- ⚡ تشغيل تلقائي لو متفعل
 local saved = load()
 if saved and verify(saved) then
     RunScript()
@@ -103,12 +103,10 @@ btn.MouseButton1Click:Connect(function()
     if KEYS[key] then
         save(key)
         gui:Destroy()
-        RunScript() -- ✅ هنا الحل
+        RunScript() -- ✅ يشغّل سكربتك فورًا
     else
         btn.Text = "INVALID KEY"
         task.wait(1)
         btn.Text = "ACTIVATE"
     end
 end)
-
-
