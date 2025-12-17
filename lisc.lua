@@ -108,6 +108,4 @@ end
 print("🔥 CODEX VERIFIED | SCRIPT RUNNING")
 
 -- مثال:
- loadstring(game:HttpGet("loadstring(game:HttpGet("https://raw.githubusercontent.com/musaed807/codex.lua/refs/heads/main/codexb.lua"))()
-"))()
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/musaed807/codex.lua/refs/heads/main/codexb.lua"))()
