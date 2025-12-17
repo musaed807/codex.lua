@@ -23,7 +23,7 @@ local function RunScript()
     print("🔥 CODEX VERIFIED | SCRIPT RUNNING")
 
     -- مثال:
-    -- loadstring(game:HttpGet("YOUR_SCRIPT_URL"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/musaed807/codex.lua/refs/heads/main/codexb.lua"))()
 end
 
 -- 💾 حفظ
@@ -111,4 +111,4 @@ btn.MouseButton1Click:Connect(function()
     end
 end)
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/musaed807/codex.lua/refs/heads/main/codexb.lua"))()
+
