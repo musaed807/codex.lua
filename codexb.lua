@@ -1,7 +1,7 @@
 -- ======================== Visual UI Library betöltése ========================
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20UI%20Library/Source.lua'))()
 
-local Window = Library:CreateWindow('scrap.hook', 'Universal', 'scrap.hook', 'rbxassetid://107929497431351', false, 'VisualUIConfigs', 'Default')
+local Window = Library:CreateWindow('Musaed', 'Universal', 'Musaed', 'rbxassetid://107929497431351', false, 'VisualUIConfigs', 'Default')
 
 -- ======================== Fő fülek ========================
 -- Main fül (eredeti tartalom)
@@ -1603,7 +1603,7 @@ local JumpPowerInfo = JumpPowerSection:CreateLabel('Default JumpPower: ' .. Defa
 local Executor = (identifyexecutor and identifyexecutor()) or "Unknown"
 local LowerExec = Executor:lower()
 
-print("[scrap.hook] Executor: " .. Executor)
+print("[Musaed] Executor: " .. Executor)
 
 -- Weak executor lista (itt tudod bővíteni)
 local WeakExecutors = {
@@ -1627,7 +1627,7 @@ if IsWeak then
         'Executor: ' .. Executor .. '\nSome features (Silent Aim, Cobalt, etc.) may not work properly.', 
         10
     )
-    warn("[scrap.hook] Weak executor detected: " .. Executor)
+    warn("[Musaed] Weak executor detected: " .. Executor)
 elseif LowerExec == "unknown" then
     Library:CreateNotification(
         '⚠️ Unknown Executor', 
@@ -1637,4 +1637,4 @@ elseif LowerExec == "unknown" then
 end
 
 -- ======================== VÉGE ========================
-print("scrap.hook v0.1")
+print("Musaed v0.1")
